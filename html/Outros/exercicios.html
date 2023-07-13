@@ -1,0 +1,62 @@
+<meta charset="UTF-8">
+
+<h1>JOGO DA ADVINHAÇÃO</h1>
+
+<input/>
+<button>TESTAR</button>
+<script>
+
+    var respostas = [];
+    var contador = 0;
+    var texto = document.querySelector("input");
+    var botao = document.querySelector("button");
+
+    texto.focus();
+    
+    function sorteia(){
+        return Math.round(Math.random()*10);
+    }
+    
+    while(contador < 1){
+        var resposta = sorteia();
+        var repetido = false;
+        
+        if(resposta !== 0){
+            for(var posicao = 0; posicao < respostas.length; posicao++){
+                if(respostas[posicao] == resposta){
+                    repetido = true;
+                    break;
+                }
+            }
+            if(repetido == false){
+                respostas.push(resposta);
+                contador++;
+            }
+        }
+    }
+    
+    function verifica(){
+        var acertou = false; 
+        
+        for(var x = 0; x < respostas.length; x++){
+            if(respostas[x] == texto.value){
+                alert("ACERTOU!");
+                acertou = true;
+                break;
+            }
+        }   
+        
+        if(acertou == false){
+            alert("ERROU!");
+        }
+        
+        texto.value = "";
+        texto.focus();
+        
+    }
+    
+    botao.onclick = verifica;
+    
+    console.log(respostas);
+    
+</script>

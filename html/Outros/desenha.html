@@ -1,0 +1,32 @@
+<canvas width="600" height="400"></canvas>
+Escolha uma cor <input type="color">
+
+<script>
+    var tela = document.querySelector("canvas");
+    var cor = document.querySelector("input");
+    var pincel = tela.getContext("2d");
+    var posicao=null;
+      
+    pincel.fillStyle = "grey";
+    pincel.fillRect(0,0,600,400);
+
+    function draw(e){
+        if(posicao!=null) {
+            pincel.fillStyle = cor.value;
+            pincel.beginPath();
+            pincel.arc(posicao.x, posicao.y, 10, 0, 2 * 3.14);
+            pincel.fill();
+        }
+        
+        posicao = {x:e.touches[0].pageX, y:e.touches[0].pageY};
+    }
+ 
+    function end(){
+        posicao=null;
+    }
+    
+    tela.ontouchmove = draw;
+
+    tela.ontouchend = end;
+
+</script>

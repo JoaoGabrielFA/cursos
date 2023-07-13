@@ -1,0 +1,91 @@
+<meta charset="UTF-8">
+
+<canvas width="600" height="400"></canvas>
+
+<script>
+
+    function desenhaQuadrado(x, y, tamanho, cor) {
+
+        pincel.fillStyle = cor;
+        pincel.fillRect(x, y, tamanho, tamanho)
+        pincel.fill();
+    }
+
+    function desenhaCirculo(x, y, raio, cor) {
+
+        pincel.fillStyle = cor;
+        pincel.beginPath();
+        pincel.arc(x, y, raio, 0, 2 * 3.14);
+        pincel.fill();
+
+    }
+
+    function desenhaPaletaDeCores() {
+
+        desenhaQuadrado(xVermelho, yQuadrados, tamanhoQuadrados, 'red');
+        desenhaQuadrado(xVerde, yQuadrados, tamanhoQuadrados, 'green');
+        desenhaQuadrado(xAzul, yQuadrados, tamanhoQuadrados, 'blue');
+
+    }
+
+    var tela = document.querySelector('canvas');
+    var pincel = tela.getContext('2d');
+    pincel.fillStyle = 'lightgray';
+    pincel.fillRect(0, 0, 600, 400);
+    
+    var posicao=null;
+
+    function draw(e){
+        var raio = 10
+        if(posicao!=null) {
+            pincel.fillStyle = corAtual;
+            pincel.beginPath();
+            if(posicao.x < 155 && posicao.y < 55){
+                raio = 0;
+            }else{
+                raio = 10
+            }
+                
+            pincel.arc(posicao.x, posicao.y, raio, 0, 2 * 3.14);
+            pincel.fill();
+        }
+        
+        posicao = {x:e.touches[0].pageX, y:e.touches[0].pageY};
+    }
+ 
+    function end(){
+        posicao=null;
+    }
+    
+    tela.ontouchmove = draw;
+
+    tela.ontouchend = end;
+
+
+    var corAtual = 'blue';
+    var xVermelho = 0;
+    var xVerde  = 50;
+    var xAzul = 100;
+    var yQuadrados = 0;
+    var tamanhoQuadrados = 50;
+
+    function trocaCor(evento){
+        var x = evento.pageX - tela.offsetLeft;
+        var y = evento.pageY - tela.offsetTop; 
+        
+        if(y<=50){
+            if(x<50){
+                corAtual = "red";
+            }else if(x<100){
+                corAtual = "green";
+            }else if(x<150){
+                corAtual = "blue";
+            }
+        }
+    }
+    
+    tela.onclick = trocaCor;
+
+    desenhaPaletaDeCores(); // mostra os quadrados de seleção de cores
+    
+</script>

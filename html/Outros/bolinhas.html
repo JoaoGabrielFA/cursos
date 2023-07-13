@@ -1,0 +1,99 @@
+<canvas width="600" height="400"></canvas>
+
+<button 
+    style = "
+    background-color: blue; 
+    border-color: blue; 
+    color: white;
+    width: 600px; 
+    height: 40px;
+    "
+>TROQUE A COR</button>
+
+<button 
+    id = "aumenta"
+    style = "
+    background-color: white; 
+    border-color: white; 
+    color: black;
+    width: 600px; 
+    height: 40px;
+    "
+>AUMENTAR</button>
+
+<button 
+    id = "reduz"
+    style = "
+    background-color: white; 
+    border-color: white; 
+    color: black;
+    width: 600px; 
+    height: 40px;
+    "
+>REDUZIR</button>
+
+<script>
+    var tela = document.querySelector('canvas');
+    var pincel = tela.getContext('2d');
+    pincel.fillStyle = 'grey';
+    pincel.fillRect(0, 0, 600, 400);
+    
+    tela.onclick = desenhaCirculo;
+    
+    var botao = document.querySelector('button');
+    botao.onclick = trocaCor;
+    
+    botao2 = document.getElementById('aumenta');
+    botao2.onclick = aumentar;
+    
+    botao3 = document.getElementById('reduz');
+    botao3.onclick = reduzir;
+
+    var raio = 10;
+    var cor = 2;
+    var corBola = ["green","red","blue"];
+    
+    function desenhaCirculo(evento) {
+        var x = evento.pageX - tela.offsetLeft;
+        var y = evento.pageY - tela.offsetTop;
+        pincel.fillStyle = corBola[cor];
+        pincel.beginPath();
+        pincel.arc(x, y, raio, 0, 2 * 3.14);
+        pincel.fill();
+        console.log(x + ',' + y);
+    }
+    
+    function trocaCor(){
+        if(cor == 0){
+            corBotao("red");
+            cor++; 
+        }else if(cor == 1){
+             corBotao("blue");
+            cor++;
+        }else{
+             corBotao("green");
+            cor = 0;
+        }
+    }
+    
+    function corBotao(x){
+        botao.style = "background-color:"+x+"; border-color:"+x+"; color:white; width:600px; height:40px;"
+        return false;
+    }
+  
+    
+    function aumentar(){
+        raio = raio + 10;
+        if(raio > 40){
+            raio = 40;
+        }
+    }
+    
+    function reduzir(){
+        raio = raio - 5;
+        if(raio < 10){
+            raio = 10;
+        }
+    }
+
+</script>

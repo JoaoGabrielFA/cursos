@@ -1,0 +1,33 @@
+<meta charset="UTF-8">
+
+<h1>"CALCULADORA DE IMC"</h1>
+<br>
+
+<script>
+
+    function pulaLinha() {
+        document.write("<br>")
+    }
+    
+    function mostra(texto) {
+        document.write("<h2>" + texto + "</h2>")
+        pulaLinha();
+    }
+    
+    var nome = prompt("Informe seu nome");
+    var altura = prompt(nome + ", Informe sua altura")
+    var peso = prompt(nome + ", Informe seu peso")
+    
+    var imc = peso/(altura*altura)
+    
+    mostra(nome + ", seu IMC é: " + imc);
+    
+    if (imc < 18.5) {
+        mostra("Seu IMC está abaixo do recomendado.")
+    } else if (imc < 35) {
+        mostra("Seu IMC está na média recomendada")
+    } else {
+        mostra("Seu IMC está acima do recomendado")
+    }
+    
+</script>

@@ -1,0 +1,36 @@
+<meta charset="UTF-8">
+
+<script>
+    
+    function pulaLinha(){
+        document.write("<br>")
+    }
+    
+    function mostra(texto){
+        document.write("<h2>" + texto + "</h2>")
+        pulaLinha();
+    }
+    
+    function sorteia(n){
+        return Math.round(Math.random()*n)
+    }
+    
+    var numeroEscolhido = sorteia(10);
+    
+    for(tentativas = 3; tentativas >= 1; tentativas--){
+   
+        var chute = parseInt(prompt("Escolha um número de 1 a 10."));
+    
+        if (chute == numeroEscolhido){
+            mostra("ACERTOU, O NUMERO ERA " + numeroEscolhido);
+            break;
+        } else{
+            alert("ERROU!");
+        }
+    }
+    
+    if(tentativas = 1){
+        mostra("ACABARAM AS TENTATIVAS!");
+    }
+    
+</script>

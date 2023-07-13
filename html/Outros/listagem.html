@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+    
+<head>
+    <meta charset="UTF-8">
+    <title>Listagem</title>
+</head>
+
+<script>
+    var nome = " ";
+    var categoria = " ";
+    
+    function trocacategoria(){
+        if(i < 11){
+            categoria = "'FRUTA'";
+        }
+        else if(i < 21){
+            categoria = "'PAÍS'";
+        }
+        else if(i < 31){
+            categoria = "'ANIMAL'";
+        }
+        else if(i < 41){
+            categoria = "'MARCA'";
+        }
+        else if(i < 51){
+            categoria = "'INSETO'";
+        }
+    }
+    
+    for (var i = 1; i < 50; i++){
+        trocacategoria();
+        document.write("palavra00" + i + "={");
+        document.write("<br>");
+        var nome = prompt("Qual a " + i + "ª palavra? " + categoria);
+        document.write("    nome: '" + nome + "',");
+        document.write("<br>");
+        document.write("    categoria: " + categoria);
+        document.write("<br>");
+        document.write("},")
+        document.write("<br>");
+        
+        if(nome == "x"){
+            break;
+        }
+    }
+    document.write("FIM");
+</script>

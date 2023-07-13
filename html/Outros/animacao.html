@@ -1,0 +1,80 @@
+<canvas width="600" height="400"></canvas>
+
+<button id="cima" style= "width:40px; height:40px; margin-left: 44px;">^</button>
+<br>
+<button id="esquerda" style= "width:40px; height:40px; margin-top: 4px;"><</button>
+<button id="baixo" style= "width:40px; height:40px;">v</button>
+<button id="direita" style= "width:40px; height:40px;">></button>
+
+<script>
+
+    var tela = document.querySelector('canvas');
+    var pincel = tela.getContext('2d');
+    pincel.fillStyle = 'lightgray';
+    pincel.fillRect(0, 0, 600, 400);
+
+    var x = 20;
+    var y = 20;
+    var taxa = 10;
+    
+    cima = document.getElementById('cima');
+    cima.onclick = attCima;
+    function attCima(){
+        y = y - taxa;
+    }
+    
+    esquerda = document.getElementById('esquerda');
+    esquerda.onclick = attEsquerda;
+    function attEsquerda(){
+        x = x - taxa;
+    }
+    
+    baixo = document.getElementById('baixo');
+    baixo.onclick = attBaixo;
+    function attBaixo(){
+        y = y + taxa;
+    }
+    
+    direita = document.getElementById('direita');
+    direita.onclick = attDireita;
+    function attDireita(){
+        x = x + taxa;
+    }
+
+    function desenhaCirculo(x, y, raio) {
+
+        pincel.fillStyle = 'blue';
+        pincel.beginPath();
+        pincel.arc(x, y, raio, 0, 2 * Math.PI);
+        pincel.fill();
+    }
+
+    function limpaTela() {
+
+        pincel.clearRect(0, 0, 600, 400);
+    }
+    
+    function limite() {
+        if(x < 10){
+            x = 10;
+        }else if(x > 590){
+            x = 590;
+        }
+        
+         if(y < 10){
+            x = 10;
+        }else if(y > 390){
+            x = 390;
+        }
+    }
+
+    function atualizaTela() {
+        
+        limite();
+        limpaTela();
+        desenhaCirculo(x, y, 10);
+    }
+
+    setInterval(atualizaTela, 20);
+
+</script>

@@ -1,0 +1,39 @@
+<meta charset="UTF-8">
+
+<script>
+
+    function pulaLinha(){
+        document.write("<br>")
+    }
+    
+    function mostra(texto){
+        document.write("<h2>" + texto + "</h2>")
+        pulaLinha();
+    }
+    
+    var loginCadastrado = "alura";
+    var senhaCadastrada = "alura321";
+    var tentativas = 2;
+    var acesso = false;
+
+    while(!acesso && (tentativas >= 0)){
+        var loginInformado = prompt("Informe seu login");
+        var senhaInformada = prompt("Informe sua senha");
+
+        if( loginCadastrado == loginInformado && senhaCadastrada == senhaInformada ) {
+
+            alert("Bem-vindo ao sistema " + loginInformado);
+            acesso = true;
+        } else if (tentativas > 0) {
+            
+            alert("Login inválido. Tentativas restantes: " + tentativas);
+        } else {
+            alert("Login inválido. Nenhuma tentativa restante");
+        }
+        
+        tentativas = tentativas - 1;
+    }
+    
+    mostra("Fim")
+
+</script>

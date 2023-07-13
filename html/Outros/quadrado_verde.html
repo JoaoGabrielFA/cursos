@@ -1,0 +1,39 @@
+<meta charset="UTF-8">
+
+<canvas width="500" height="500"></canvas>
+
+<script>
+
+    var tela = document.querySelector("canvas");
+    var pincel = tela.getContext("2d");
+    
+    function quadrado(x,y,cor){
+        pincel.fillStyle = cor;
+        pincel.fillRect(x,y,50,50);
+        pincel.strokeStyle = "black";
+        pincel.strokeRect(x,y,50,50);
+    }
+    
+    function escreva(x,y,texto){
+        pincel.font='20px Georgia';
+        pincel.fillStyle='black';
+        pincel.fillText(texto, x, y);
+    }
+
+    escreva(50,30,"Qual é a fração?")
+    quadrado(50,50,"green");
+    quadrado(100,50,"green");
+    quadrado(150,50,"green");
+    quadrado(200,50,"white");
+    
+    /*
+    for(var y = 0; y < 500; y = y + 50){
+        
+        for(var x = 0; x < 500; x = x + 50){
+            quadrado(x,y,"green")
+        }
+        
+        x = 0;
+    }
+    */  
+</script>
