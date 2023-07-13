@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+    <title>Codificador</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="codificador.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body>
+    <header>
+        <p class="titulo">CODIFICADOR</p>
+    </header>
+
+    <main>
+        <section>
+            <textarea id="campoDeTexto" class="input" cols="35" rows="10" placeholder="digite seu texto:"></textarea>
+
+            <div>
+                <p class="aviso">&#9888; Apenas letras minúsculas e sem acento.</p>
+                <button id="criptografar" class="botoes" onclick="btn_encriptar()">Codificar</button>
+                <button id="descriptografar" class="botoes" onclick="btn_desencriptar()">Decodificar</button>
+            </div>
+        </section>
+
+        <section>
+            <textarea id="campoDeResposta" class="input" cols="35" rows="10" placeholder="Nenhuma mensagem encontrada"
+                readonly></textarea>
+
+            <div>
+                <p class="aviso">&nbsp;</p>
+                <button id="copiar" class="botoes" onclick="btn_copiar()">Copiar</button>
+                <button id="apagar" class="botoes" onclick="btn_apagar()">Apagar</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>João Gabriel de Freitas Antunes &copy; - 2022</p>
+        <div class="links">
+            <div>
+                <a href="https://www.linkedin.com/in/joao-gabriel-fa">
+                    <img src="imagens/linkedin.png" alt="Logo do Linkedin" id="linkedin">
+                </a>
+            </div>
+
+            <div>
+                <a href="https://github.com/JoaoGabrielFA">
+                    <img src="imagens/github.png" alt="Logo do GitHub" id="github">
+                </a>
+            </div>
+
+            <div>
+                <a href="https://cursos.alura.com.br/user/joao-gabriel-fa">
+                    <img src="imagens/alura.png" alt="Logo da Alura" id="alura">
+                </a>
+            </div>
+        </div>
+    </footer>
+    <script src="codificador.js"></script>
+</body>
+
+</html>

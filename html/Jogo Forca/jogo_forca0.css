@@ -1,0 +1,254 @@
+body {
+    background-color: #3CB371;
+    width: 100%;
+    height: 100%;
+    margin: 30px 0 0 0;
+}
+
+header {
+    height: 5vh;
+    padding-bottom: 0.5vh;
+}
+
+#categoria {
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 3vh;
+    text-align: center;
+    padding: 1vh 0 1vh 0;
+}
+
+
+main {
+    max-width: 1200px;
+    height: 80%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    margin-bottom: 10%;
+}
+
+#imagem {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 30vh;
+    width: auto;
+}
+
+#palavra_secreta {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 3vh;
+}
+
+#iniciar {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #FFFFFF;
+    border: none;
+    border-radius: 0.2em;
+    font-size: 3vh;
+    font-weight: bold;
+    color: #000000;
+    cursor: pointer;
+}
+
+
+.letras {
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 3vh;
+    border-bottom: 0.1em solid #FFFFFF;
+    margin: 0.1em;
+}
+
+.letrasEspaco {
+    color: #000000;
+    font-weight: bold;
+    font-size: 3vh;
+    border-bottom: 0.1em;
+    margin: 0.1em;
+}
+
+#teclado {
+    height: 20%;
+    width: auto;
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+    align-items: center;
+    padding-bottom: 30px;
+}
+
+.teclas {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.teclas button {
+    background-color: #FFFFFF;
+    color: #000000;
+    border: none;
+    border-radius: 0.2em;
+    font-weight: bold;
+    font-size: 2.5vh;
+    width: 9%;
+    aspect-ratio: 1.1;
+    margin: 0 0.5% 1% 0.5%;
+    cursor: pointer;
+}
+
+.teclas button:hover {
+    transform: scale(1.1);
+}
+
+.teclas button:disabled {
+    cursor: not-allowed;
+}
+
+/*---RODAPÉ---*/
+
+footer {
+    text-align: center;
+    background-color: #2E8B57;
+    width: 100%;
+}
+
+footer * {
+    background-color: #2E8B57;
+}
+
+.contato {
+    padding: 1.5vh 0 1.5vh;
+}
+
+footer div {
+    display: inline-block;
+    padding: 0 1vh 0 1vh;
+}
+
+footer p {
+    color: #FFFFFF;
+    font-size: 1vh;
+    margin-bottom: 1vh;
+}
+
+a {
+    color: #FFFFFF;
+    text-decoration: none;
+    padding-top: 1vh;
+}
+
+footer img {
+    display: inline-block;
+    width: 5vh;
+    height: auto;
+    padding: 1vh;
+}
+
+label {
+    display: block;
+    font-size: 1vh;
+}
+
+/*---MODAL---*/
+
+#myModal {
+    margin-top: 30%;
+}
+
+.modal-content {
+    width: 100%;
+    aspect-ratio: 16.9;
+}
+
+.modal-close {
+    font-size: 3vh;
+}
+
+.modal-title {
+    font-size: 3vh;
+    font-weight: bold;
+}
+
+.modal-body {
+    font-size: 2vh;
+    font-style: italic;
+}
+
+.modal-button {
+    color: #FFFFFF;
+    font-size: 1.5vh;
+    background-color: #3CB371;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+@media (orientation: portrait) {
+    footer{
+        position: fixed;
+        bottom: 0;
+        left: 0
+    }
+}
+
+@media (orientation: landscape) {
+    .teclas button {
+        font-size: 2.5vw;
+        width: 4vw;
+        margin: 0 0.2vw 0.4vw 0.2vw;
+    }
+    
+    footer img {
+        width: 5vw;
+    }
+    
+    footer p, label {
+        font-size: 2vw;
+    }
+    
+    #myModal {
+        margin-top: 10%;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    header {
+        height: 8vh;
+    }
+    #categoria, #iniciar, .letras, .letrasEspaco {
+        font-size: 5vh;
+    }
+    #imagem {
+        width: 30vh;
+        height: auto;
+    }
+    
+    footer {
+        max-height: 100%;
+        position: fixed;
+        bottom: 0;
+        left: 0
+    }
+    
+    .contato {
+        padding: 1.5vw 0 1.5vw;
+    }
+    
+    footer img {
+        width: 3vw;
+    }
+    
+    footer p, label {
+        font-size: 1vw;
+    }
+    
+    #myModal {
+        margin-top: 20%;
+    }
+}

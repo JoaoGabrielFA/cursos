@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="jogo_forca.css">
+    <title>Jogo da Forca</title>
+</head>
+
+
+<body>
+    <header>
+        <div id="categoria"></div>
+    </header>
+    
+    
+    <main>
+        <div>
+            <img id="imagem" src="imagens/forca_0.png">
+        </div>
+        
+        <div id="palavra_secreta">
+            <button id="iniciar" onclick="iniciar()">INICIAR</button>
+        </div>
+        
+        <div id="teclado">
+            <div class="teclas">
+                <button id="tecla_A" onclick="checarLetra('A')">A</button>
+                <button id="tecla_B" onclick="checarLetra('B')">B</button>
+                <button id="tecla_C" onclick="checarLetra('C')">C</button>
+                <button id="tecla_D" onclick="checarLetra('D')">D</button>
+                <button id="tecla_E" onclick="checarLetra('E')">E</button>
+                <button id="tecla_F" onclick="checarLetra('F')">F</button>
+                <button id="tecla_G" onclick="checarLetra('G')">G</button>
+                <button id="tecla_H" onclick="checarLetra('H')">H</button>
+                <button id="tecla_I" onclick="checarLetra('I')">I</button>
+            </div>
+            
+            <div class="teclas">
+                <button id="tecla_J" onclick="checarLetra('J')">J</button>
+                <button id="tecla_K" onclick="checarLetra('K')">K</button>
+                <button id="tecla_L" onclick="checarLetra('L')">L</button>
+                <button id="tecla_M" onclick="checarLetra('M')">M</button>
+                <button id="tecla_N" onclick="checarLetra('N')">N</button>
+                <button id="tecla_O" onclick="checarLetra('O')">O</button>
+                <button id="tecla_P" onclick="checarLetra('P')">P</button>
+                <button id="tecla_Q" onclick="checarLetra('Q')">Q</button>
+                <button id="tecla_R" onclick="checarLetra('R')">R</button>
+            </div>
+            
+            <div class="teclas">
+                <button id="tecla_S" onclick="checarLetra('S')">S</button>
+                <button id="tecla_T" onclick="checarLetra('T')">T</button>
+                <button id="tecla_U" onclick="checarLetra('U')">U</button>
+                <button id="tecla_V" onclick="checarLetra('V')">V</button>
+                <button id="tecla_W" onclick="checarLetra('W')">W</button>
+                <button id="tecla_X" onclick="checarLetra('X')">X</button>
+                <button id="tecla_Y" onclick="checarLetra('Y')">Y</button>
+                <button id="tecla_Z" onclick="checarLetra('Z')">Z</button>
+                <button id="reiniciar" onclick="reiniciarJogo()">&nbsp;</button>
+            </div>
+        </div>
+        
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel"></h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span class="modal-close" aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                <div class="modal-body" id="modal-text"></div>
+                <div class="modal-footer">
+                    <button type="button" class="modal-button" onclick="reiniciarJogo()">Continuar</button>
+                </div>
+                </div>
+            </div>
+        </div>
+        
+    </main>
+    
+    
+    <footer>
+        <p>João Gabriel de Freitas Antunes &copy; - 2022</p>
+        <div class="links">
+            <div>
+                <a href="https://www.linkedin.com/in/joao-gabriel-fa">
+                    <img src="imagens/linkedin.png" alt="Logo do Linkedin" id="linkedin">
+                </a>
+            </div>
+            
+            <div>
+                <a href="https://github.com/JoaoGabrielFA">
+                    <img src="imagens/github.png" alt="Logo do GitHub" id="github">
+                </a>
+            </div>
+            
+            <div>
+                <a href="https://cursos.alura.com.br/user/joao-gabriel-fa">
+                    <img src="imagens/alura.png" alt="Logo da Alura" id="alura">
+                </a>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="jogo_forca.js"></script>
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

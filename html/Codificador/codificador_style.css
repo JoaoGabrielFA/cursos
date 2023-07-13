@@ -1,0 +1,214 @@
+* {
+    font-family: 'Inter', sans-serif;
+    margin: 0 auto;
+    background-color: #F3F5FC;
+}
+
+@font-face {
+    font-family: "hacker";
+    src: url("Cracked Code.ttf")
+}
+
+header {
+    width: 100%;
+    margin: 4vw 0 4vw;
+}
+
+header p {
+    font-family: "hacker";
+    font-size: 9vw;
+    color: #0A3871;
+    text-align: center;
+}
+
+main {
+    margin-top: 4vw;
+    width: 90%;
+    text-align: center;
+}
+
+.input {
+    width: 100%;
+    height: 25%;
+    font-size: 4vw;
+    color: #0A3871;
+    text-transform: lowercase;
+    border-radius: 3vw;
+    resize: none;
+}
+
+#campoDeTexto {
+    border: 2px;
+}
+
+#campoDeTexto::placeholder {
+    color: #0A3871;
+    font-size: 4vw;
+}
+
+#campoDeResposta {
+    border: 2px;
+    background-color: #FFFFFF;
+}
+
+#campoDeResposta::placeholder{
+    font-size: 4vw;
+    font-weight: bold;
+    text-align: center;
+    color: #0A3871;
+    line-height: 40vw;
+}
+
+.aviso {
+    font-size: 2vw;
+    color: #67808E;
+    font-weight: bold;
+    text-align: left;
+    margin: 2vw 0 2vw;
+}
+
+.botoes {
+    width: 49.4%;
+    display: inline-block;
+    background-color: #FFFFFF;
+    color: #0A3871;
+    font-size: 3vw;
+    text-align: center;
+    font-weight: bold;
+    border: 2px solid #0A3871;
+    border-radius: 3vw;
+    padding: 3vw 0;
+    margin: 3vw 0 3vw;
+}
+
+#criptografar, #copiar {
+    background-color: #0A3871;
+    color: #FFFFFF;
+}
+
+footer {
+    text-align: center;
+    background-color: #0A3871;
+    width: 100%;
+}
+
+footer * {
+    background-color: #0A3871;
+}
+
+.contato {
+    padding: 1.5vh 0 1.5vh;
+}
+
+footer div {
+    display: inline-block;
+    padding: 0 1vh 0 1vh;
+}
+
+footer p {
+    color: #FFFFFF;
+    font-size: 1vh;
+    margin-bottom: 1vh;
+}
+
+a {
+    color: #FFFFFF;
+    text-decoration: none;
+    padding-top: 1vh;
+}
+
+footer img {
+    display: inline-block;
+    width: 4vh;
+    height: auto;
+    padding: 1vh;
+}
+
+label {
+    display: block;
+    font-size: 1vh;
+}
+
+@media (orientation: landscape) {
+    header {
+        margin: 4vh 0 4vh;
+    }
+
+    header p {
+        font-size: 9vh;
+    }
+    
+    main section {
+        width: 44%;
+        height: 70%;
+        display: inline-block;
+    }
+
+    .input {
+        font-size: 5vh;
+        border-radius: 3vh;
+    }
+    #campoDeTexto, #campoDeResposta {
+        height: 40vh;
+    }
+    
+    #campoDeTexto::placeholder, #campoDeResposta::placeholder {
+        font-size: 5vh;
+    }
+    
+    #campoDeResposta::placeholder {
+        position: absolute;
+        top: 50%;
+    }
+
+    .aviso {
+        font-size: 2vh;
+        margin: 2vh 0 2vh;
+    }
+    
+    .botoes {
+        font-size: 3vh;
+        border-radius: 3vh;
+        padding: 3vh 0;
+        margin: 3vh 0 3vh;
+    }
+
+    footer img {
+        width: 5vw;
+    }
+    
+    footer p, label {
+        font-size: 2vw;
+    }
+}
+
+@media screen and (min-width: 1200px) and (orientation:landscape){
+    .input, #campoDeTexto::placeholder, #campoDeResposta::placeholder {
+        font-size: 3vh;
+    }
+    
+    footer {
+        max-height: 100%;
+        position: fixed;
+        bottom: 0;
+        left: 0
+    }
+    
+    .contato {
+        padding: 1.5vw 0 1.5vw;
+    }
+    
+    footer img {
+        width: 3vw;
+    }
+    
+    footer p, label {
+        font-size: 1vw;
+    }
+}
+
+@media (orientation: portrait) {
+    main {
+        padding-bottom: 4vh;
+    }
+}
